@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import MessageBox from './components/MessageBox'
 import * as llm from './packages/llm'
+import * as llm_ws from './packages/llm_ws'
 import SessionItem from './components/SessionItem'
 import {
     Toolbar,
@@ -244,23 +245,23 @@ function Main() {
         setConfigureChatConfig(store?.currentSession)
     }
     const generateName = async (session: Session) => {
-        llm.chat(
-            store.settings.openaiKey,
-            store.settings.apiHost,
-            store.settings.maxContextSize,
-            store.settings.maxTokens,
-            store.settings.model,
-            store.settings.temperature,
-            prompts.nameConversation(session.messages.slice(0, 3)),
-            ({ text: name }) => {
-                name = name.replace(/['"“”]/g, '')
-                session.name = name
-                store.updateChatSession(session)
-            },
-            (err) => {
-                console.log(err)
-            },
-        )
+        // llm.chat(
+        //     store.settings.openaiKey,
+        //     store.settings.apiHost,
+        //     store.settings.maxContextSize,
+        //     store.settings.maxTokens,
+        //     store.settings.model,
+        //     store.settings.temperature,
+        //     prompts.nameConversation(session.messages.slice(0, 3)),
+        //     ({ text: name }) => {
+        //         name = name.replace(/['"“”]/g, '')
+        //         session.name = name
+        //         store.updateChatSession(session)
+        //     },
+        //     (err) => {
+        //         console.log(err)
+        //     },
+        // )
     }
     const saveSession = async (session: Session) => {
         const filePath = await save({
@@ -281,7 +282,7 @@ function Main() {
 
     const generate = async (session: Session, promptMsgs: Message[], targetMsg: Message) => {
         messageScrollRef.current = { msgId: targetMsg.id, smooth: false }
-        await llm.chat(
+        await llm_ws.chat(
             store.settings.openaiKey,
             store.settings.apiHost,
             store.settings.maxContextSize,
@@ -297,7 +298,7 @@ function Main() {
                             content: text,
                             cancel,
                             model: store.settings.model,
-                            generating: true,
+                            generating: false,
                         }
                         break
                     }
@@ -319,15 +320,7 @@ function Main() {
                 store.updateChatSession(session)
             },
         )
-        for (let i = 0; i < session.messages.length; i++) {
-            if (session.messages[i].id === targetMsg.id) {
-                session.messages[i] = {
-                    ...session.messages[i],
-                    generating: false,
-                }
-                break
-            }
-        }
+
         store.updateChatSession(session)
 
         messageScrollRef.current = null

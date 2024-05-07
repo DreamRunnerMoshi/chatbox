@@ -1,0 +1,12 @@
+{
+"ApplicationName": "Microsoft Teams",
+"Persons": ["Aditya Dewan", "Wesley Johnston", "Manpreet Singh", "Md Moshiur Rahman-ag", "Prateek Agg", "Étv DG opsbot APP"],
+"Summary": "Discussion about issues related to booking synchronization between PCLN and other systems like Agoda, where there are concerns of extra bookings being returned from getBookingList response and potential ghost bookings leading to financial loss. Suggestions include sending failed or provisioned bookings back for reconcimation.",
+"Title": "Discussion on synchronization issues between PCLN and other systems in Microsoft Teams."
+}
+
+{"ApplicationName": "Microsoft Teams",
+"Persons": ["Étv DG opsbot APP"],
+"Summary": "OrbStack has 3 unread threads.",
+"Title": "OrbStack unread threads count on Microsoft Teams."
+}
