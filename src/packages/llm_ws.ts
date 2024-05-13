@@ -1,4 +1,5 @@
-import { Message } from '../stores/types'
+
+import { Message, Session } from '../stores/types'
 import * as wordCount from './utils'
 import { createParser } from 'eventsource-parser'
 
@@ -17,7 +18,9 @@ export async function chat(
     modelName: string,
     temperature: number,
     msgs: Message[],
-    onText?: (option: OnTextCallbackResult) => void,
+    session: Session,
+    targetMsgIndex: number,
+    onText: (option: OnTextCallbackResult) => void,
     onError?: (error: Error) => void,
 ) {
     if (msgs.length === 0) {
@@ -65,11 +68,42 @@ export async function chat(
         };
         
         ws.onmessage = (event) => {
-            if(onText){
-                if(event.data !== '[DONE]') 
-                    fullText+=event.data
-                    onText({ text: fullText, cancel })
+            console.log(event.data)
+            if(event.data !== '[DONE]')  {
+                fullText+=event.data
+                session.messages[targetMsgIndex] = {
+                    ...session.messages[targetMsgIndex],
+                    content: fullText,
+                    cancel,
+                    model: modelName,
+                    generating: true,
+                }
+                onText({ text: fullText, cancel })
+            }else {
+                session.messages[targetMsgIndex] = {
+                    ...session.messages[targetMsgIndex],
+                    content: fullText,
+                    cancel,
+                    model: modelName,
+                    generating: false,
+                }
+                onText({ text: fullText, cancel })
+                ws.close()
             }
+                        
+                // for (let i = 0; i < session.messages.length; i++) {
+                //     if (session.messages[i].id === targetMsg.id) {
+                //         session.messages[i] = {
+                //             ...session.messages[i],
+                //             content: fullText,
+                //             cancel,
+                //             model: modelName,
+                //             generating: false,
+                //         }
+                //         break
+                //     }
+                // }
+                //onText({ text: fullText, cancel })
         };
         
         ws.onerror = (error) => {
@@ -97,5 +131,33 @@ export async function chat(
             onError(error as any)
         }
         throw error
+    }
+}
+
+export async function handleSSE(response: Response, onMessage: (message: string) => void) {
+    
+    const wsUrl = 'ws://localhost:8000/ws/chatgpt/';
+    const ws = new WebSocket(wsUrl);
+    
+    // ws.addEventListener
+    // for await (const chunk of ws.onmessage) {
+    //     const str = new TextDecoder().decode(chunk)
+    //     parser.feed(str)
+    // }
+}
+
+export async function* iterableStreamAsync(stream: ReadableStream): AsyncIterableIterator<Uint8Array> {
+    const reader = stream.getReader()
+    try {
+        while (true) {
+            const { value, done } = await reader.read()
+            if (done) {
+                return
+            } else {
+                yield value
+            }
+        }
+    } finally {
+        reader.releaseLock()
     }
 }

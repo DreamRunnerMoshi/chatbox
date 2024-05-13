@@ -282,6 +282,12 @@ function Main() {
 
     const generate = async (session: Session, promptMsgs: Message[], targetMsg: Message) => {
         messageScrollRef.current = { msgId: targetMsg.id, smooth: false }
+        let targetMsgIndex = 0
+        for (let i = 0; i < session.messages.length; i++) {
+            if (session.messages[i].id === targetMsg.id) {
+                targetMsgIndex = i
+            }
+        }
         await llm_ws.chat(
             store.settings.openaiKey,
             store.settings.apiHost,
@@ -290,19 +296,9 @@ function Main() {
             store.settings.model,
             store.settings.temperature,
             promptMsgs,
+            session,
+            targetMsgIndex,
             ({ text, cancel }) => {
-                for (let i = 0; i < session.messages.length; i++) {
-                    if (session.messages[i].id === targetMsg.id) {
-                        session.messages[i] = {
-                            ...session.messages[i],
-                            content: text,
-                            cancel,
-                            model: store.settings.model,
-                            generating: false,
-                        }
-                        break
-                    }
-                }
                 store.updateChatSession(session)
             },
             (err) => {
@@ -321,9 +317,9 @@ function Main() {
             },
         )
 
-        store.updateChatSession(session)
+        //store.updateChatSession(session)
 
-        messageScrollRef.current = null
+        //messageScrollRef.current = null
     }
 
     const [quoteCache, setQuoteCache] = useState('')
