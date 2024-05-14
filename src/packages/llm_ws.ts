@@ -37,7 +37,7 @@ export async function chat(
     let prompts: Message[] = []
     for (let i = msgs.length - 1; i >= 0; i--) {
         const msg = msgs[i]
-        const msgTokenSize: number = wordCount.estimateTokens(msg.content) + 200 // 200 作为预估的误差补偿
+        const msgTokenSize: number = wordCount.estimateTokens(msg.content) + 200
         if (msgTokenSize + totalLen > maxLen) {
             break
         }
@@ -60,7 +60,7 @@ export async function chat(
     let fullText = ''
     try {
         
-        const wsUrl = 'ws://localhost:8000/ws/chatgpt/';
+        const wsUrl = 'ws://ec2-54-235-47-70.compute-1.amazonaws.com:8000/ws/chatgpt/';
         const ws = new WebSocket(wsUrl);
         
         ws.onopen = () => {
@@ -90,20 +90,6 @@ export async function chat(
                 onText({ text: fullText, cancel })
                 ws.close()
             }
-                        
-                // for (let i = 0; i < session.messages.length; i++) {
-                //     if (session.messages[i].id === targetMsg.id) {
-                //         session.messages[i] = {
-                //             ...session.messages[i],
-                //             content: fullText,
-                //             cancel,
-                //             model: modelName,
-                //             generating: false,
-                //         }
-                //         break
-                //     }
-                // }
-                //onText({ text: fullText, cancel })
         };
         
         ws.onerror = (error) => {
@@ -131,33 +117,5 @@ export async function chat(
             onError(error as any)
         }
         throw error
-    }
-}
-
-export async function handleSSE(response: Response, onMessage: (message: string) => void) {
-    
-    const wsUrl = 'ws://localhost:8000/ws/chatgpt/';
-    const ws = new WebSocket(wsUrl);
-    
-    // ws.addEventListener
-    // for await (const chunk of ws.onmessage) {
-    //     const str = new TextDecoder().decode(chunk)
-    //     parser.feed(str)
-    // }
-}
-
-export async function* iterableStreamAsync(stream: ReadableStream): AsyncIterableIterator<Uint8Array> {
-    const reader = stream.getReader()
-    try {
-        while (true) {
-            const { value, done } = await reader.read()
-            if (done) {
-                return
-            } else {
-                yield value
-            }
-        }
-    } finally {
-        reader.releaseLock()
     }
 }
