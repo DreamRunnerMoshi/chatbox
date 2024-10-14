@@ -1,6 +1,79 @@
+<p align="right">
+  <a href="README.md">English</a> |
+  <a href="./doc/README-CN.md">简体中文</a>
+</p>
+
+This is the repository for the Chatbox Community Edition, open-sourced under the GPLv3 license. For most users, I recommend using the Chatbox Official Edition (closed-source). It's still completely free, easy to install, and supports more of the latest features. You can get it below:
+
+### Download for Desktop
+
+<table style="width: 100%">
+  <tr>
+    <td width="25%" align="center">
+      <b>Windows</b>
+    </td>
+    <td width="25%" align="center" colspan="2">
+      <b>MacOS</b>
+    </td>
+    <td width="25%" align="center">
+      <b>Linux</b>
+    </td>
+  </tr>
+  <tr style="text-align: center">
+    <td align="center" valign="middle">
+      <a href='https://chatboxai.app/?c=download-windows'>
+        <img src='./doc/statics/windows.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Setup.exe</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://chatboxai.app/?c=download-mac-intel'>
+        <img src='./doc/statics/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Intel</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://chatboxai.app/?c=download-mac-aarch'>
+        <img src='./doc/statics/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>M1/M2</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://chatboxai.app/?c=download-linux'>
+        <img src='./doc/statics/linux.png' style="height:24px; width: 24px" />
+        <br />
+        <b>AppImage</b>
+      </a>
+    </td>
+  </tr>
+</table>
+
+### Download for iOS/Android
+
+<a href='https://apps.apple.com/app/chatbox-ai/id6471368056' style='margin-right: 4px'>
+<img src='./doc/statics/app_store.webp' style="height:38px;" />
+</a>
+<a href='https://play.google.com/store/apps/details?id=xyz.chatboxapp.chatbox' style='margin-right: 4px'>
+<img src='./doc/statics/google_play.png' style="height:38px;" />
+</a>
+<a href='https://chatboxai.app/install?download=android_apk' style='margin-right: 4px; display: inline-flex; justify-content: center'>
+<img src='./doc/statics/android.png' style="height:28px; display: inline-block" />
+.APK
+</a>
+
+For more information: [chatboxai.app](https://chatboxai.app/)
+
+---
+
 <h1 align="center">
-<img src='./doc/icon.png' width='30'>
-<span>Chatbox</span>
+<img src='./doc/statics/icon.png' width='30'>
+<span>
+    Chatbox
+    <span style="font-size:8px; font-weight: normal;">(Community Edition)</span>
+</span>
 </h1>
 <p align="center">
     <em>Your Ultimate AI Copilot on the Desktop. <br />Chatbox is a desktop client for ChatGPT, Claude and other LLMs, available on Windows, Mac, Linux</em>
@@ -24,76 +97,14 @@
 </a>
 </p>
 
-## ⏬ Download for PC
+<a href="https://www.producthunt.com/posts/chatbox?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatbox" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=429547&theme=light" alt="Chatbox - Better&#0032;UI&#0032;&#0038;&#0032;Desktop&#0032;App&#0032;for&#0032;ChatGPT&#0044;&#0032;Claude&#0032;and&#0032;other&#0032;LLMs&#0046; | Product Hunt" style="width: 150px; height: 30px;" width="100" height="40" /></a>
 
-<table style="width: 100%">
-  <tr>
-    <td width="25%" align="center">
-      <b>Windows</b>
-    </td>
-    <td width="25%" align="center" colspan="2">
-      <b>MacOS</b>
-    </td>
-    <td width="25%" align="center">
-      <b>Linux</b>
-    </td>
-  </tr>
-  <tr style="text-align: center">
-    <td align="center" valign="middle">
-      <a href='https://chatboxai.app/?c=download-windows'>
-        <img src='./doc/windows.png' style="height:24px; width: 24px" />
-        <br />
-        <b>Setup.exe</b>
-      </a>
-    </td>
-    <td align="center" valign="middle">
-      <a href='https://chatboxai.app/?c=download-mac-intel'>
-        <img src='./doc/mac.png' style="height:24px; width: 24px" />
-        <br />
-        <b>Intel</b>
-      </a>
-    </td>
-    <td align="center" valign="middle">
-      <a href='https://chatboxai.app/?c=download-mac-aarch'>
-        <img src='./doc/mac.png' style="height:24px; width: 24px" />
-        <br />
-        <b>M1/M2</b>
-      </a>
-    </td>
-    <td align="center" valign="middle">
-      <a href='https://chatboxai.app/?c=download-linux'>
-        <img src='./doc/linux.png' style="height:24px; width: 24px" />
-        <br />
-        <b>AppImage</b>
-      </a>
-    </td>
-  </tr>
-</table>
-
-Visit the **[GitHub Releases](https://github.com/Bin-Huang/chatbox/releases)** to download the latest version or any previous release.
-
-## ⏬ Download for iOS/Android
-
-<a href='https://apps.apple.com/app/chatbox-ai/id6471368056' style='margin-right: 4px'>
-<img src='./doc/app_store.webp' style="height:38px;" />
+<a href="./doc/statics/snapshot_light.png">
+<img src="./doc/statics/snapshot_light.png" width="400"/>
 </a>
-<a href='https://play.google.com/store/apps/details?id=xyz.chatboxapp.chatbox' style='margin-right: 4px'>
-<img src='./doc/google_play.webp' style="height:38px;" />
+<a href="./doc/statics/snapshot_dark.png">
+<img src="./doc/statics/snapshot_dark.png" width="400"/>
 </a>
-<a href='https://chatboxai.app/zh/install?download=android_apk' style='margin-right: 4px; display: inline-flex; justify-content: center'>
-<img src='./doc/android.png' style="height:28px; display: inline-block" />
-.APK
-</a>
-
-## 🌟 Features
-
-<a href="https://www.producthunt.com/posts/chatbox?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatbox" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=429547&theme=light" alt="Chatbox - Better&#0032;UI&#0032;&#0038;&#0032;Desktop&#0032;App&#0032;for&#0032;ChatGPT&#0044;&#0032;Claude&#0032;and&#0032;other&#0032;LLMs&#0046; | Product Hunt" style="width: 200px; height: 40px;" width="100" height="40" /></a>
-
-<img src="./dec/../doc/demo_desktop_1.jpg" alt="App Screenshot" style="box-shadow: 2px 2px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; border-radius: 8px; width: 700px" />
-
-<img src="./dec/../doc/demo_desktop_2.jpg" alt="App Screenshot" style="box-shadow: 2px 2px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; border-radius: 8px; width: 700px" />
-
-<img src="./dec/../doc/demo_desktop_3.jpg" alt="App Screenshot" style="box-shadow: 2px 2px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; border-radius: 8px; width: 700px" />
 
 <!-- <table>
 <tr>
@@ -106,7 +117,7 @@ Visit the **[GitHub Releases](https://github.com/Bin-Huang/chatbox/releases)** t
 </tr>
 </table> -->
 
-# Features
+## Features
 
 -   **Local Data Storage**  
     :floppy_disk: Your data remains on your device, ensuring it never gets lost and maintains your privacy.
@@ -174,51 +185,13 @@ Visit the **[GitHub Releases](https://github.com/Bin-Huang/chatbox/releases)** t
 
 ## FAQ
 
--   [Frequently Asked Questions](./FAQ.md)
+-   [Frequently Asked Questions](./doc/FAQ.md)
 
 ## Why I made Chatbox?
 
 I developed Chatbox initially because I was debugging some prompts and found myself in need of a simple and easy-to-use prompt and API debugging tool. I thought there might be more people who needed such a tool, so I open-sourced it.
 
 At first, I didn't know that it would be so popular. I listened to the feedback from the open-source community and continued to develop and improve it. Now, it has become a very useful AI desktop application. There are many users who love Chatbox, and they not only use it for developing and debugging prompts, but also for daily chatting, and even to do some more interesting things like using well-designed prompts to make AI play various professional roles to assist them in everyday work...
-
-## Roadmap
-
--   [x] AI chat and session management
--   [x] Store all your important message data locally.
--   [x] Markdown
--   [x] Streaming reply
--   [x] API Host configuration
--   [x] Automatically generate tab titles
--   [x] Button for clearing messages.
--   [x] Night/Dark mode
--   [x] message token estimating
--   [x] GPT4
--   [x] i18n
--   [x] Copy button for code blocks
--   [x] Stop button for AI message generation
--   [x] Drag-and-drop sorting of tabs
--   [x] [Web version](https://web.chatboxai.app)
--   [x] Azure OpenAI API compatibility
--   [x] Improved prompt settings
--   [x] Prompt Library
--   [x] Built-in AI services
--   [x] Shortcut keys
--   [x] Claude
--   [x] Temperature Setting
--   [x] Conversation Special Settings
--   [x] OpenAI Custom Model
--   [x] Dall-E-3
--   [x] Message Search
--   [x] Data Export
--   [x] Support for Google Gemini Pro
--   [x] Support for Ollama (llama2, Mistral, Mixtral, codellama, vicuna, yi, and solar)
--   [x] Thread archive, history message list
--   [x] Mobile (Android, iOS)
--   [ ] Talk with files
--   [ ] Talk with URLs
--   [ ] Cross-device synchronization
--   More...
 
 ## How to Contribute
 
@@ -232,24 +205,36 @@ Any form of contribution is welcome, including but not limited to:
 -   Submitting translations
 -   Submitting any other forms of contribution
 
-## Build Instructions for Chatbox (Mac, Windows, Linux)
+## Build Instructions
 
-1. Clone the repository from Github using the following command:
+1. Clone the repository from Github
 
 ```bash
 git clone https://github.com/Bin-Huang/chatbox.git
 ```
 
-2. Install the required dependencies by running the following command:
+2. Install the required dependencies
 
 ```bash
 npm install
 ```
 
-3. Start the application by running the following command:
+3. Start the application (in development mode)
 
 ```bash
-npm start
+npm run dev
+```
+
+4. Build the application, package the installer for current platform
+
+```bash
+npm run package
+```
+
+5. Build the application, package the installer for all platforms
+
+```bash
+npm run package:all
 ```
 
 ## Buy Me a Coffee
@@ -258,7 +243,7 @@ npm start
 
 | Paypal                                            | Wechat Pay                                      | Ali Pay                                      |
 | ------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
-| [**`Paypal`**](https://www.paypal.me/tobennhuang) | <img src="./doc/wechat_pay.JPG" height="240" /> | <img src="./doc/ali_pay.PNG" height="240" /> |
+| [**`Paypal`**](https://www.paypal.me/tobennhuang) | <img src="./doc/statics/wechat_pay.JPG" height="240" /> | <img src="./doc/statics/ali_pay.PNG" height="240" /> |
 
 ## Star History
 
@@ -270,4 +255,4 @@ npm start
 
 ## License
 
-[MIT](./LICENSE)
+[LICENSE](./LICENSE)
